@@ -1,5 +1,7 @@
 %https://in.mathworks.com/matlabcentral/answers/231379-pdepe-matlab-convection-diffusion
 sol = pdepe(m,@ParticleDiffusionpde,@ParticleDiffusionic,@ParticleDiffusionbc,x,t);
+global Ds;
+Ds =1.0;
 % Extract the first solution component as u.
 u = sol(:,:,:); 
 
