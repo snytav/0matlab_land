@@ -1,4 +1,4 @@
-function example2 ( )
+function [u]=convection_diffusion(u0,x,t,v.nu) 
 
 %*****************************************************************************80
 %

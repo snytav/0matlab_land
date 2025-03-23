@@ -206,7 +206,7 @@ function [ pl, ql, pr, qr ] = bcfun ( xl, ul, xr, ur, t )
 %
 %  Modified:
 %
-%    29 August 2013
+%    29 liAugust 2013
 %
 %  Author:
 %
