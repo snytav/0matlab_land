@@ -24,3 +24,4 @@ z = depths_uniform;
 surf(x,y,z);
 xlabel ( '<--- X --->' )
 ylabel ( '<--- T --->' );
+saveas(gcf,'Ameland_surface.png')
