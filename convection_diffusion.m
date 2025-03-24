@@ -309,7 +309,7 @@ function [ pl, ql, pr, qr ] = bcfun ( xl, ul, xr, ur, t )
 %
 %  Modified:
 %
-%    29 August 2013
+%    29 liAugust 2013
 %
 %  Author:
 %
@@ -339,7 +339,7 @@ function [ pl, ql, pr, qr ] = bcfun ( xl, ul, xr, ur, t )
 %
   pl = ul;
   ql = 0.0;
-  pr = ur;
+  pr = ur - 1.0;
   qr = 0.0;
 
   return
