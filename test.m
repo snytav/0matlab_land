@@ -8,10 +8,10 @@
 
   x = xmesh;
   D = 1.0;
-  u0 = @(x) 2.0 * x ./ ( 1.0 + x.^2 );
+  u0 = @(x) -x.^2 ;
   % u0 = ;
-  V = zeros(size(x));
-  D = 0.1*ones(size(x));
+  V = 0.01*ones(size(x));
+  D = zeros(size(x));
   u = convection_diffusion(u0,xmesh,tspan,V,D);
   u = sol(:,:,1);
 
