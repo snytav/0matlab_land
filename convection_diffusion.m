@@ -1,4 +1,15 @@
-function [u]=convection_diffusion(u0_ext,x,t,v,nu) 
+function [u]=convection_diffusion(u0_ext,x,t,V,nu) 
+
+diff  = nu;
+conv  = V;
+x_step = x(2) - x(1);
+
+
+global diff;
+global conv;
+global x_step;
+
+
 
 %*****************************************************************************80
 %
@@ -215,6 +226,12 @@ function value = f ( u, x )
 end
 function [ c, f, s ] = pdefun ( x, t, u, dudx )
 
+global conv;
+global diff;
+global x_step;
+qq = x_step;
+
+
 %*****************************************************************************80
 %
 %% pdefun() defines the components of the PDE.
@@ -259,9 +276,12 @@ function [ c, f, s ] = pdefun ( x, t, u, dudx )
 %
 %    real S(:,1), the source terms.
 %
+  %dx = x(2) - x(1);
+  nu = diff(int32(floor(x/x_step))+1);
+  v  = conv(int32(floor(x/x_step))+1);
   c = 1.0;
   ubar = degwave ( x );
-  f = dudx - ( 3.0 * ubar.^2 - 2.0 * ubar ) * u;
+  f = nu*dudx - v * u;
   s = 0.0;
 
   return

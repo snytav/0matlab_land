@@ -1,3 +1,4 @@
+  clear all;
   nx = 21;
   xmesh = linspace ( 0.0, 1.0, nx );
 
@@ -9,7 +10,8 @@
   D = 1.0;
   u0 = @(x) 2.0 * x ./ ( 1.0 + x.^2 );
   % u0 = ;
-  V = 0.0;
+  V = zeros(size(x));
+  D = ones(size(x));
   u = convection_diffusion(u0,xmesh,tspan,V,D);
   u = sol(:,:,1);
 
