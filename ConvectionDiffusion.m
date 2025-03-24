@@ -1,11 +1,11 @@
 
 % https://in.mathworks.com/matlabcentral/answers/437177-solving-advection-diffusion-pde
-function DiffusionConvection
+function [u] = ConvectionDiffusion(x,t,u0,D,V)
 close all;
-clear all;
+% clear all;
 m = 0;
-x = linspace(0,5,100);
-t = linspace(0,10,100);
+% x = linspace(0,5,100);
+% t = linspace(0,10,100);
 
 sol = pdepe(m,@pdefun,@icfun,@bcfun,x,t);
 figure;
