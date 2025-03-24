@@ -11,7 +11,7 @@
   u0 = @(x) 2.0 * x ./ ( 1.0 + x.^2 );
   % u0 = ;
   V = zeros(size(x));
-  D = ones(size(x));
+  D = 0.1*ones(size(x));
   u = convection_diffusion(u0,xmesh,tspan,V,D);
   u = sol(:,:,1);
 

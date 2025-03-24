@@ -92,7 +92,8 @@ global x_step;
   xlabel ( '<--- X --->' )
   ylabel ( '<--- T --->' );
   zlabel ( '<---U(X,T)--->' );
-  filename = 'example2.png';
+  
+  saveas(gcf,'example2.png')
   print ( '-dpng', filename );
   fprintf ( 1, '\n' );
   fprintf ( 1, '  Saved solution plot in file "%s"\n', filename );
